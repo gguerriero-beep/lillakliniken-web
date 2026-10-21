@@ -26,9 +26,10 @@ BOOK_NEW_90 = K + "/booking/cal/psykiater-nybesok-90-min-online"
 BOOK_ADHD = K + "/booking/cal/psykiater-nybesok-90-min-online"   # byt till ADHD-frågeställning när den finns
 BOOK_RX = K + "/booking/cal/psykiater-forskrivningsfornyelse"
 LOGIN = K + "/login"
-DK_FIRST_60 = K + "/booking/cal/psykiater-frste-konsultation-60-min-online"
-DK_FIRST_90 = K + "/booking/cal/psykiater-frste-konsultation-90-min-online"
-DK_LOGIN = K + "/login"
+KDK = "https://lillaklinikendk.kaddio.com"   # dansk enhed (DKK)
+DK_FIRST_60 = KDK + "/booking/cal/psykiater-frste-konsultation-60-min-online"
+DK_FIRST_90 = KDK + "/booking/cal/psykiater-frste-konsultation-90-min-online"
+DK_LOGIN = KDK + "/login"
 
 PHONE_DISPLAY = "070-448 02 40"
 PHONE_TEL = "+46704480240"
