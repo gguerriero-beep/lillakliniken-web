@@ -157,6 +157,7 @@ caption { text-align: left; padding: 18px 20px 4px; font-family: var(--font-disp
 .doctors { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .doctor { display: flex; flex-direction: column; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; }
+.photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; background: var(--soft); }
 .doctor h3 { font-size: 1.2rem; }
 .doctor .role { color: var(--accent); font-weight: 600; font-size: 0.97rem; }
 .doctor p { color: var(--muted); }

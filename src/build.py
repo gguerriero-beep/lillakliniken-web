@@ -313,7 +313,7 @@ def home(s):
 
 <section class="band-white" aria-labelledby="team"><div class="wrap">
 <div class="section-head"><h2 id="team">Våra läkare</h2><p class="muted">Alla våra läkare är specialister i psykiatri och tar personligt medicinskt ansvar för sina patienter.</p></div>
-{doctors_grid(short=True)}
+{doctors_grid(s, p, short=True)}
 <p style="margin-top:22px"><a href="{h('/lakare/')}">Läs mer om våra läkare →</a></p>
 </div></section>
 
@@ -326,23 +326,24 @@ def home(s):
 
 
 DOCTORS = [
-    ("G", "Giuseppe Guerriero", "Specialistläkare i psykiatri · grundare och medicinskt ansvarig",
+    ("giuseppe-guerriero.jpg", "Giuseppe Guerriero", "Specialistläkare i psykiatri · grundare och medicinskt ansvarig",
      "Ser varje människa som en helhet, där symtom är ett uttryck för samspelet mellan kropp, psyke och livssituation. Lång klinisk erfarenhet i Sverige och internationellt, och doktorand vid Sahlgrenska akademin, Göteborgs universitet.",
      "Svenska, italienska, engelska, danska"),
-    ("N", "Nikolai Magerkurth", "Specialistläkare i psykiatri",
+    ("nikolai-magerkurth.jpg", "Nikolai Magerkurth", "Specialistläkare i psykiatri",
      "Humanistisk och fenomenologisk inriktning med en helhetssyn på människan. Ser behandling som en relationell process där samtalet är lika viktigt som läkemedlet.",
      "Svenska, engelska, spanska"),
-    ("C", "Cecilia Mircica", "Specialistläkare i psykiatri och allmänmedicin",
+    ("cecilia-mircica.jpg", "Cecilia Mircica", "Specialistläkare i psykiatri och allmänmedicin",
      "Helhetsinriktad och systemisk, med blick för relationer, familj och livssituation. Kombinerar medicinska och psykologiska perspektiv och har även utbildning i psykologi och psykoterapi.",
      "Svenska, rumänska, engelska"),
 ]
 
 
-def doctors_grid(short=False):
+def doctors_grid(s, path, short=False):
     out = []
-    for ini, name, role, bio, langs in DOCTORS:
+    for img, name, role, bio, langs in DOCTORS:
         b = "" if short else f"<p>{bio}</p>"
-        out.append(f'<div class="doctor"><div class="avatar" aria-hidden="true">{ini}</div><h3>{name}</h3>'
+        src = s.asset(path, "img/" + img)
+        out.append(f'<div class="doctor"><img class="photo" src="{src}" alt="{name}" width="120" height="120" loading="lazy"><h3>{name}</h3>'
                    f'<span class="role">{role}</span>{b}<span class="langs">Språk: {langs}</span></div>')
     return '<div class="doctors">' + "".join(out) + "</div>"
 
@@ -590,7 +591,7 @@ def doctors(s):
     body = page_hero(s, p, "Våra läkare", "Specialistläkare i psykiatri",
                      "Hos oss är det läkaren som bedömer, beslutar och följer upp. Alla våra läkare är specialister i psykiatri och tar personligt medicinskt ansvar för sina patienter.",
                      crumbs="Våra läkare") + f"""
-<section><div class="wrap">{doctors_grid()}</div></section>
+<section><div class="wrap">{doctors_grid(s, p)}</div></section>
 <section class="band-white"><div class="wrap prose">
 <h2>Läkare som vill arbeta med oss</h2>
 <p>Vi välkomnar fler specialister i psykiatri i Sverige och Danmark. Du arbetar online i den omfattning som passar dig, och vi sköter bokning, betalning och administration. Skriv till <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
@@ -728,7 +729,7 @@ def dk_home(s):
 </div></section>
 <section id="laege" class="band-white"><div class="wrap">
 <div class="section-head"><h2>Lægen</h2></div>
-<div class="doctors"><div class="doctor"><div class="avatar" aria-hidden="true">G</div><h3>Giuseppe Guerriero</h3>
+<div class="doctors"><div class="doctor"><img class="photo" src="{s.asset(p, 'img/giuseppe-guerriero.jpg')}" alt="Giuseppe Guerriero" width="120" height="120" loading="lazy"><h3>Giuseppe Guerriero</h3>
 <span class="role">Speciallæge i psykiatri</span>
 <p>Ser hele mennesket, hvor symptomer er udtryk for samspillet mellem krop, psyke og livssituation. Mange års klinisk erfaring i Sverige og internationalt, og ph.d.-studerende ved Göteborgs Universitet.</p>
 <span class="langs">Sprog: dansk, svensk, engelsk, italiensk</span></div></div>
