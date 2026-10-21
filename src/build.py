@@ -700,7 +700,7 @@ def dk_home(s):
 <aside class="hero-side"><div class="price-card" id="priser">
 <h2>Første konsultation</h2>
 <div class="price-row"><span>60 minutter</span><strong>2 500 kr.</strong></div>
-<div class="price-row"><span>90 minutter</span><strong>3 600 kr.</strong></div>
+<div class="price-row"><span>90 minutter</span><strong>3 500 kr.</strong></div>
 <ul class="checks">
 <li>{CHECK}Kun videokonsultation</li>
 <li>{CHECK}Log ind med MitID</li>
@@ -721,8 +721,8 @@ def dk_home(s):
 <div class="section-head"><h2>Priser</h2><p class="muted">Alle priser i danske kroner.</p></div>
 <div class="table-box"><table><thead><tr><th scope="col">Ydelse</th><th scope="col">Tid</th><th scope="col" class="num">Pris</th></tr></thead><tbody>
 <tr><td>Første konsultation</td><td>60 min</td><td class="num">2 500 kr.</td></tr>
-<tr><td>Første konsultation ved mere kompleks problemstilling</td><td>90 min</td><td class="num">3 600 kr.</td></tr>
-<tr><td>Opfølgende konsultation</td><td>30 min</td><td class="num">1 550 kr.</td></tr>
+<tr><td>Første konsultation ved mere kompleks problemstilling</td><td>90 min</td><td class="num">3 500 kr.</td></tr>
+<tr><td>Opfølgende konsultation</td><td>30 min</td><td class="num">1 500 kr.</td></tr>
 <tr><td>Opfølgende konsultation</td><td>60 min</td><td class="num">2 500 kr.</td></tr>
 <tr><td>Epikrise</td><td>–</td><td class="num">Pris oplyses</td></tr>
 </tbody></table></div>
