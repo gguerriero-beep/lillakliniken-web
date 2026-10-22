@@ -540,14 +540,16 @@ def rx(s):
 </ul>
 <p>För narkotikaklassade läkemedel skickas begäran normalt tidigast en vecka innan läkemedlet tar slut, om inte annat har överenskommits med läkaren.</p>
 <h2>Intyg och utlåtanden</h2>
-<p>Intyg är inte patientbesök och bokas separat. Läkaren skriver intyg utifrån en medicinsk bedömning och journalen. Intyg som inte behövs för din vård, till exempel till Transportstyrelsen eller för färdtjänst, är momspliktiga.</p>
+<p>Intyg är inte patientbesök och bokas separat. Läkaren skriver intyg utifrån en medicinsk bedömning och journalen. Intyg som i första hand ska användas av någon annan än vården, till exempel Transportstyrelsen, färdtjänst, försäkringsbolag, arbetsgivare eller förskola, är momspliktiga (25 %). Underlag som behövs för din fortsatta vård är momsfria.</p>
 <ul>
 <li>Sjukintyg till Försäkringskassan (FK7804)</li>
 <li>Läkarutlåtande för aktivitets- eller sjukersättning</li>
 <li>Läkarintyg till Transportstyrelsen</li>
 <li>Färdtjänstintyg</li>
 <li>Rättsligt intyg och medicinskt underlag</li>
-<li>Läkarintyg och specialistunderlag</li>
+<li>Specialistunderlag för din fortsatta vård</li>
+<li>Läkarintyg till försäkringsbolag, arbetsgivare eller lärosäte</li>
+<li>Läkarintyg för förskola</li>
 <li>Reseintyg för läkemedel</li>
 <li>Medicinsk sammanfattning på begäran</li>
 </ul>
@@ -574,7 +576,7 @@ def prices(s):
 <section><div class="wrap" style="display:flex;flex-direction:column;gap:24px">
 {table("Läkarbesök", [("Nybesök hos specialistläkare i psykiatri", "60 min", "2 500 kr"), ("Nybesök vid mer komplex frågeställning", "90 min", "3 500 kr"), ("Återbesök", "30 min", "1 500 kr"), ("Återbesök", "45 min", "2 000 kr"), ("Återbesök", "60 min", "2 500 kr"), ("Telefonrådgivning", "20 min", "750 kr"), ("Anhörigkonsultation", "30 min", "1 500 kr"), ("Anhörigkonsultation", "60 min", "2 500 kr")])}
 {table("Utredning", [("ADHD-utredning (psykolog och specialistläkare, inkl. läkarbesök 90 min)", "Flera besök", "26 900 kr")])}
-{table("Recept, intyg och administration", [("Receptförnyelse", "–", "450 kr"), ("Kontakt med andra vårdgivare", "20 min", "750 kr"), ("Remissutfärdande", "15 min", "750 kr"), ("Läkarintyg / specialistunderlag", "20 min", "1 000 kr"), ("Reseintyg för läkemedel", "20 min", "1 000 kr"), ("Läkarintyg för förskola", "20 min", "1 000 kr"), ("Sjukintyg FK7804", "30 min", "1 500 kr"), ("Medicinsk sammanfattning på begäran", "30 min", "1 500 kr"), ("Läkarutlåtande för aktivitets- eller sjukersättning", "60 min", "2 500 kr"), ("Färdtjänstintyg (inkl. moms)", "20 min", "1 875 kr"), ("Läkarintyg Transportstyrelsen (inkl. moms)", "30 min", "1 875 kr"), ("Rättsligt intyg / medicinskt underlag (inkl. moms)", "30 min", "1 875 kr"), ("Administrativ avgift provtagning (labbkostnad tillkommer)", "–", "150–300 kr")])}
+{table("Recept, intyg och administration", [("Receptförnyelse", "–", "450 kr"), ("Kontakt med andra vårdgivare", "20 min", "750 kr"), ("Remissutfärdande", "15 min", "750 kr"), ("Specialistunderlag för vård", "20 min", "1 000 kr"), ("Läkarintyg till försäkringsbolag / arbetsgivare (inkl. moms)", "20 min", "1 250 kr"), ("Reseintyg för läkemedel (inkl. moms)", "20 min", "1 250 kr"), ("Läkarintyg för förskola (inkl. moms)", "20 min", "1 250 kr"), ("Sjukintyg FK7804", "30 min", "1 500 kr"), ("Medicinsk sammanfattning på begäran", "30 min", "1 500 kr"), ("Läkarutlåtande för aktivitets- eller sjukersättning", "60 min", "2 500 kr"), ("Färdtjänstintyg (inkl. moms)", "20 min", "1 875 kr"), ("Läkarintyg Transportstyrelsen (inkl. moms)", "30 min", "1 875 kr"), ("Rättsligt intyg / medicinskt underlag (inkl. moms)", "30 min", "1 875 kr"), ("Administrativ avgift provtagning (labbkostnad tillkommer)", "–", "150–300 kr")])}
 </div></section>
 <section class="band-white"><div class="wrap prose">
 <h2>Villkor</h2>
