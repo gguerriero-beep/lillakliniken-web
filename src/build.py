@@ -15,7 +15,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC = os.path.join(ROOT, "src", "static")
-SITE_URL = "https://lillakliniken.com"
+SITE_URL = "https://www.lillakliniken.com"
 
 # ---------------------------------------------------------------------------
 # Kaddio – direktlänkar. Uppdatera här när behandlingsformerna byter namn.
