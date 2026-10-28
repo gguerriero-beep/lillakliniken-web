@@ -25,6 +25,7 @@ BOOK_NEW_60 = K + "/booking/cal/psykiater-nybesok-60-min-online"
 BOOK_NEW_90 = K + "/booking/cal/psykiater-nybesok-90-min-online"
 BOOK_ADHD = K + "/booking/cal/psykiater-nybesok-90-min-online"   # byt till ADHD-frågeställning när den finns
 BOOK_RX = K + "/booking/cal/psykiater-forskrivningsfornyelse"
+BOOK_ONSITE_90 = K + "/booking/cal/psykiater-nybesok-90-min-mottagning-goteborg"
 LOGIN = K + "/login"
 KDK = "https://lillaklinikendk.kaddio.com"   # dansk enhed (DKK)
 DK_FIRST_60 = KDK + "/booking/cal/psykiater-frste-konsultation-60-min-online"
@@ -98,7 +99,7 @@ def layout(s, path, title, desc, body, lang="sv", alt=None, jsonld=""):
         nav_items = [("/sa-fungerar-det/", "Så fungerar det"), ("/#vi-hjalper", "Vi hjälper med"),
                      ("/priser/", "Priser"), ("/lakare/", "Läkare"), ("/kontakt/", "Kontakt")]
         actions = (f'<a class="btn btn-ghost" href="{LOGIN}">Logga in</a>'
-                   f'<a class="btn btn-primary" href="{BOOK_NEW_60}">Boka läkarbedömning</a>')
+                   f'<a class="btn btn-primary" href="{h('/boka/')}">Boka läkarbedömning</a>')
         home = "/"
         skip = "Hoppa till innehållet"
         nav_label = "Huvudmeny"
@@ -205,7 +206,7 @@ def page_hero(s, path, eyebrow, title, lead, crumbs=None, cta=True):
         c = f'<div class="crumbs"><a href="{h("/")}">Hem</a> / {crumbs}</div>'
     btn = ""
     if cta:
-        btn = (f'<div class="actions"><a class="btn btn-primary btn-lg" href="{BOOK_NEW_60}">Boka läkarbedömning</a>'
+        btn = (f'<div class="actions"><a class="btn btn-primary btn-lg" href="{h('/boka/')}">Boka läkarbedömning</a>'
                f'<a class="btn btn-ghost btn-lg" href="{h("/priser/")}">Se priser</a></div>')
     return f"""<div class="page-hero"><div class="wrap">{c}
 <span class="eyebrow">{eyebrow}</span>
@@ -215,9 +216,10 @@ def page_hero(s, path, eyebrow, title, lead, crumbs=None, cta=True):
 
 
 def cta_band(s, path, text="Alla börjar med en bedömning hos specialistläkare i psykiatri."):
+    h = lambda t: s.href(path, t)
     return f"""<section class="cta-band"><div class="wrap">
 <div style="display:flex;flex-direction:column;gap:6px;max-width:620px"><h2>Redo att boka?</h2><p class="muted">{text}</p></div>
-<div class="actions"><a class="btn btn-primary btn-lg" href="{BOOK_NEW_60}">Boka läkarbedömning</a>
+<div class="actions"><a class="btn btn-primary btn-lg" href="{h('/boka/')}">Boka läkarbedömning</a>
 <a class="btn btn-ghost btn-lg" href="{LOGIN}">Redan patient? Logga in</a></div>
 </div></section>"""
 
@@ -252,7 +254,7 @@ def home(s):
 <span class="eyebrow">Specialistpsykiatri för vuxna</span>
 <h1>Psykiater online – i hela Sverige</h1>
 <p class="lead">Hos oss träffar du en specialistläkare i psykiatri som bedömer, beslutar och följer upp din behandling. Via video, och på vår mottagning i Göteborg när det behövs.</p>
-<div class="actions"><a class="btn btn-primary btn-lg" href="{BOOK_NEW_60}">Boka läkarbedömning</a>
+<div class="actions"><a class="btn btn-primary btn-lg" href="{h('/boka/')}">Boka läkarbedömning</a>
 <a class="btn btn-ghost btn-lg" href="{h('/sa-fungerar-det/')}">Så fungerar det</a></div>
 </div>
 <aside class="hero-side"><div class="price-card">
@@ -272,7 +274,7 @@ def home(s):
 <div class="grid grid-3">
 <div class="card"><span class="eyebrow">Ny patient</span><h3>Boka en läkarbedömning</h3>
 <p class="grow">Alla börjar med en bedömning hos specialistläkare i psykiatri. Läkaren föreslår sedan en plan tillsammans med dig.</p>
-<a class="btn btn-primary" href="{BOOK_NEW_60}">Boka nybesök</a></div>
+<a class="btn btn-primary" href="{h('/boka/')}">Boka nybesök</a></div>
 <div class="card"><span class="eyebrow">Redan patient</span><h3>Återbesök och frågor</h3>
 <p class="grow">Boka återbesök hos din läkare eller skriv till oss. Logga in med BankID.</p>
 <a class="btn btn-ghost" href="{LOGIN}">Logga in</a></div>
@@ -307,7 +309,7 @@ def home(s):
 <div><span class="eyebrow">ADHD hos vuxna</span><h2>Börja med en läkarbedömning</h2>
 <p>Läkaren bedömer om en utredning är rätt nästa steg. En fullständig ADHD-utredning görs av psykolog och specialistläkare tillsammans och kostar 26 900 kr.</p>
 <p>Läkemedelsbehandling kan aldrig utlovas före en medicinsk bedömning.</p></div>
-<div><a class="btn btn-light btn-lg" href="{BOOK_ADHD}">Boka nybesök – ADHD</a>
+<div><a class="btn btn-light btn-lg" href="{h('/boka/')}">Boka nybesök – ADHD</a>
 <a href="{h('/adhd/')}" style="text-align:center;font-weight:600">Läs mer om utredningen</a></div>
 </div>
 </div></section>
@@ -429,9 +431,9 @@ def goteborg(s):
                      crumbs="Psykiater Göteborg") + f"""
 <section><div class="wrap prose">
 <h2>Mottagningen</h2>
-<p>Vår mottagning ligger på {ADDRESS}. Besök på plats bokas efter överenskommelse med din läkare, till exempel när en fysisk undersökning behövs eller när det passar behandlingen bättre.</p>
+<p>Vår mottagning ligger på {ADDRESS}. Du kan boka ditt nybesök direkt på mottagningen, och återbesök kan ske på plats eller via video – efter vad som passar dig och behandlingen.</p>
 <h2>Så börjar du</h2>
-<p>Alla nya patienter börjar med ett nybesök hos en specialistläkare i psykiatri. Det första besöket sker oftast via video, så att du snabbt kommer igång.</p>
+<p>Alla nya patienter börjar med ett nybesök hos en specialistläkare i psykiatri – på mottagningen i Göteborg (90 minuter) eller via video (60 eller 90 minuter). Du väljer när du <a href="{h('/boka/')}">bokar</a>.</p>
 <h2>Vi hjälper vuxna med</h2>
 <ul>
 <li><a href="{h('/adhd/')}">ADHD</a> – läkarbedömning, utredning och behandling</li>
@@ -444,6 +446,33 @@ def goteborg(s):
 {cta_band(s, p)}"""
     s.write(p, layout(s, p, "Psykiater Göteborg – privat specialistpsykiatri | Lillakliniken",
                       "Privat psykiater i Göteborg. Specialistläkare i psykiatri med mottagning på Vändgatan 9 och besök via video.", body))
+
+
+def boka(s):
+    p = "/boka/"
+    h = lambda t: s.href(p, t)
+    body = page_hero(s, p, "Boka nybesök", "Hur vill du träffa läkaren?",
+                     "Alla nya patienter börjar med ett nybesök hos en specialistläkare i psykiatri. Välj om du vill ses via video eller på vår mottagning i Göteborg – sedan ser du lediga tider direkt.",
+                     crumbs="Boka nybesök", cta=False) + f"""
+<section><div class="wrap">
+<div class="grid">
+<div class="card"><span class="eyebrow">Online – hela Sverige</span><h3>Nybesök via video</h3>
+<p class="grow">Du träffar läkaren via säker videolänk, var du än bor i Sverige. Välj 90 minuter om du har en mer komplex frågeställning, till exempel ADHD eller en lång sjukdomshistoria.</p>
+<div class="price-row"><span>60 minuter</span><strong>2 500 kr</strong></div>
+<div class="price-row"><span>90 minuter</span><strong>3 500 kr</strong></div>
+<div class="actions"><a class="btn btn-primary" href="{BOOK_NEW_60}">Boka 60 min online</a>
+<a class="btn btn-ghost" href="{BOOK_NEW_90}">Boka 90 min online</a></div></div>
+<div class="card"><span class="eyebrow">På mottagningen i Göteborg</span><h3>Nybesök på plats</h3>
+<p class="grow">Du träffar läkaren på vår mottagning på {ADDRESS}. Nybesöket på plats är alltid 90 minuter.</p>
+<div class="price-row"><span>90 minuter</span><strong>3 500 kr</strong></div>
+<div class="actions"><a class="btn btn-primary" href="{BOOK_ONSITE_90}">Boka 90 min på mottagningen</a></div></div>
+</div>
+<p class="muted" style="margin-top:24px">Du bokar och loggar in med BankID och betalar vid bokningen. Osäker på vad du ska välja? Boka 60 minuter online – läkaren hjälper dig vidare.</p>
+<p class="muted">Redan patient? <a href="{LOGIN}">Logga in</a> för att boka återbesök eller skriva till oss. Bor du i Danmark? <a href="{h('/dk/')}">Book på dansk</a>.</p>
+</div></section>
+<section><div class="wrap">{NOT_FOR_US}</div></section>"""
+    s.write(p, layout(s, p, "Boka nybesök hos psykiater – online eller i Göteborg | Lillakliniken",
+                      "Boka nybesök hos specialistläkare i psykiatri. Via video i hela Sverige (60 eller 90 min) eller på mottagningen i Göteborg (90 min). Bokning med BankID.", body))
 
 
 def adhd(s):
@@ -459,7 +488,7 @@ def adhd(s):
 <li><b>Återkoppling</b><span>Du får ett skriftligt utlåtande med eventuell diagnos, styrkor, svårigheter och rekommendationer.</span></li>
 <li><b>Behandling och uppföljning</b><span>Vid behov fortsätter du med medicinsk behandling och uppföljning hos din läkare.</span></li>
 </ol>
-<div class="actions" style="margin-top:30px"><a class="btn btn-primary btn-lg" href="{BOOK_ADHD}">Boka nybesök – ADHD (90 min)</a></div>
+<div class="actions" style="margin-top:30px"><a class="btn btn-primary btn-lg" href="{h('/boka/')}">Boka nybesök – ADHD (90 min)</a></div>
 </div></section>
 <section class="band-white"><div class="wrap prose">
 <h2>Vad ingår i utredningen?</h2>
@@ -783,7 +812,7 @@ def build(out, preview=False):
         shutil.rmtree(out)
     os.makedirs(out)
     s = Site(out, preview)
-    home(s); how(s); online(s); goteborg(s); adhd(s); conditions(s); rx(s); prices(s)
+    home(s); how(s); online(s); goteborg(s); boka(s); adhd(s); conditions(s); rx(s); prices(s)
     doctors(s); contact(s); research(s); legals(s); dk_home(s); dk_contact(s); not_found(s)
     for item in os.listdir(STATIC):
         src = os.path.join(STATIC, item)
