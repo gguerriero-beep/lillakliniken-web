@@ -559,6 +559,7 @@ def rx(s):
 <section><div class="wrap prose">
 <h2>Receptförnyelse</h2>
 <p>Receptförnyelse innebär alltid en medicinsk bedömning av läkare, som går igenom journal, tidigare ordinationer och behandlingsplan. Avgiften (450 kr) gäller bedömningen, även om receptet inte förnyas.</p>
+<p>Så går det till: du väljer din läkare, loggar in med BankID och betalar 450 kr vid beställningen. Därefter fyller du i ett kort formulär om vilket läkemedel det gäller och hur du mår. Din läkare går igenom begäran inom 48 timmar på vardagar.</p>
 <p><a class="btn btn-primary" href="{BOOK_RX}">Begär receptförnyelse (BankID)</a></p>
 <p><b>Boka i stället en tid om</b></p>
 <ul>
