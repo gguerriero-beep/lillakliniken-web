@@ -761,7 +761,6 @@ def dk_home(s):
 <tr><td>Journalgennemgang ved overtagelse af igangværende behandling (før første konsultation)</td><td>30 min</td><td class="num">1 500 kr.</td></tr>
 <tr><td>Opfølgende konsultation</td><td>30 min</td><td class="num">1 500 kr.</td></tr>
 <tr><td>Opfølgende konsultation</td><td>60 min</td><td class="num">2 500 kr.</td></tr>
-<tr><td>Epikrise</td><td>–</td><td class="num">Pris oplyses</td></tr>
 </tbody></table></div>
 </div></section>
 <section id="laege" class="band-white"><div class="wrap">
