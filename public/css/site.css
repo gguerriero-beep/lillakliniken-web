@@ -82,7 +82,7 @@ p { margin: 0; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; justify-content: space-between; padding-block: 16px; }
 .brand { display: flex; align-items: center; text-decoration: none; color: var(--ink); }
-.brand svg { display: block; height: 38px; width: auto; }
+.brand svg { display: block; height: 34px; width: auto; }
 .brand:hover { color: var(--ink); }
 @media (max-width: 520px) { .brand svg { height: 36px; } }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-weight: 500; }
@@ -105,7 +105,7 @@ section { padding-block: 64px; }
 .band-white { background: var(--surface); border-block: 1px solid var(--line); }
 .section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; max-width: 680px; }
 .hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 64px 72px; position: relative; overflow: hidden; }
-.hero::before { content: ""; position: absolute; right: max(-30px, calc((100vw - var(--wrap)) / 2 - 150px)); top: -10px; width: 280px; height: 420px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.3; pointer-events: none; transform: rotate(4deg); }
+.hero::before { content: ""; position: absolute; right: max(-60px, calc((100vw - var(--wrap)) / 2 - 100px)); top: 6px; width: 290px; height: 430px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.38; pointer-events: none; transform: rotate(12deg); }
 .hero .wrap { position: relative; z-index: 1; }
 @media (max-width: 760px) { .hero::before { width: 190px; height: 280px; right: -70px; top: -20px; opacity: 0.14; } }
 .hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
