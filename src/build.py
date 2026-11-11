@@ -327,6 +327,16 @@ def home(s):
 </div>
 </div></section>
 
+<section style="padding-top:0" aria-labelledby="mottagning"><div class="wrap">
+<div class="section-head"><h2 id="mottagning">Vår mottagning i Göteborg</h2><p class="muted">En liten, lugn mottagning på {ADDRESS}. Här träffar du läkaren när ett besök på plats behövs – övriga besök sker via video.</p></div>
+<div class="gallery">
+<img src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
+<img src="{s.asset(p, 'img/mottagning-kopp.jpg')}" alt="Kaffekopp med Lillaklinikens logotyp på ett bord, med en kvist i vas i bakgrunden" width="768" height="861" loading="lazy">
+<img src="{s.asset(p, 'img/mottagning-vantrum.jpg')}" alt="Väntrummet med två stolar, en växt och tavlor på väggen" width="1100" height="1222" loading="lazy">
+</div>
+<p style="margin-top:18px"><a href="{h('/psykiater-goteborg/')}">Mer om mottagningen i Göteborg →</a></p>
+</div></section>
+
 <section style="padding-top:0"><div class="wrap">
 <div class="feature">
 <div><span class="eyebrow">ADHD hos vuxna</span><h2>Börja med en läkarbedömning</h2>
@@ -453,6 +463,7 @@ def goteborg(s):
                      f"Specialistläkare i psykiatri med mottagning på {ADDRESS}. De flesta besök sker via video, och du träffar läkaren på plats när det behövs.",
                      crumbs="Psykiater Göteborg") + f"""
 <section><div class="wrap prose">
+<img class="photo-wide" src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet på Vändgatan 9 med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
 <h2>Mottagningen</h2>
 <p>Vår mottagning ligger på {ADDRESS}. Du kan boka ditt nybesök direkt på mottagningen, och återbesök kan ske på plats eller via video – efter vad som passar dig och behandlingen.</p>
 <h2>Så börjar du</h2>

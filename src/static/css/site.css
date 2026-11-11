@@ -192,3 +192,9 @@ caption { text-align: left; padding: 18px 20px 4px; font-family: var(--font-disp
 .social svg { width: 18px; height: 18px; fill: currentColor; }
 .site-footer a { color: var(--on-band); }
 .site-footer .legal { flex-basis: 100%; border-top: 1px solid #2E3D42; padding-top: 18px; font-size: 0.88rem; }
+
+/* Photos of the clinic */
+.gallery { display: grid; gap: 16px; grid-template-columns: 2fr 1fr 1fr; }
+.gallery img { width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius); display: block; background: var(--soft); }
+@media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; } .gallery img:first-child { grid-column: 1 / -1; } .gallery img { height: 240px; } }
+.photo-wide { width: 100%; height: auto; border-radius: var(--radius); display: block; }
