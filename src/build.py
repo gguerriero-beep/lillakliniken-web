@@ -17,6 +17,27 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC = os.path.join(ROOT, "src", "static")
 SITE_URL = "https://www.lillakliniken.com"
 
+# Brand logo (LPC brandkit), inlined so it follows the text colour (light/dark).
+with open(os.path.join(STATIC, "..", "brand", "logo-horizontal.svg"), encoding="utf-8") as _f:
+    LOGO_H = _f.read().strip()
+with open(os.path.join(STATIC, "..", "brand", "logo-stacked.svg"), encoding="utf-8") as _f:
+    LOGO_STACK = _f.read().strip()
+
+SOCIAL = [
+    ("Facebook", "https://www.facebook.com/Lillaklinikenpsykiatri",
+     '<path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.6V14h2.8v8z"/>'),
+    ("Instagram", "https://www.instagram.com/lillakliniken.eu/",
+     '<path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1C3.7 15 3.6 14.7 3.6 12s0-3 .1-4.1C3.8 5.2 5.1 3.9 7.8 3.8 9 3.7 9.3 3.6 12 3.6zM12 2C9.3 2 8.9 2 7.9 2.1 4.2 2.2 2.2 4.2 2.1 7.9 2 8.9 2 9.3 2 12s0 3.1.1 4.1c.2 3.6 2.1 5.6 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.6-.2 5.6-2.1 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.2-3.6-2.1-5.6-5.8-5.8C15.1 2 14.7 2 12 2z"/>'),
+    ("LinkedIn", "https://www.linkedin.com/company/lillakliniken/",
+     '<path d="M6.9 8.6H3.6V20h3.3zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.4c0-3.1-1.7-4.6-3.9-4.6-1.8 0-2.6 1-3 1.7V8.6h-3.3V20h3.3v-5.7c0-1.5.3-2.9 2.1-2.9s1.8 1.7 1.8 3V20h3.3z"/>'),
+]
+
+
+def social_links():
+    return '<div class="social">' + "".join(
+        f'<a href="{u}" rel="noopener" aria-label="{n}"><svg viewBox="0 0 24 24" aria-hidden="true">{p}</svg></a>'
+        for n, u, p in SOCIAL) + "</div>"
+
 # ---------------------------------------------------------------------------
 # Kaddio – direktlänkar. Uppdatera här när behandlingsformerna byter namn.
 # ---------------------------------------------------------------------------
@@ -131,7 +152,7 @@ def layout(s, path, title, desc, body, lang="sv", alt=None, jsonld=""):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}">
-<meta name="theme-color" content="#16232B">
+<meta name="theme-color" content="#1C1C1A">
 <link rel="icon" href="{ico}" type="image/svg+xml">
 <link rel="stylesheet" href="{css}">
 {jsonld}
@@ -140,7 +161,7 @@ def layout(s, path, title, desc, body, lang="sv", alt=None, jsonld=""):
 <a class="skip" href="#main">{skip}</a>
 <div class="topbar"><div class="wrap">{top}</div></div>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="{h(home)}"><b>Lillakliniken</b><span>Psykiatri Cura</span></a>
+<a class="brand" href="{h(home)}" aria-label="Lillakliniken Psykiatri Cura – startsida">{LOGO_H}</a>
 <nav class="nav" aria-label="{nav_label}">{nav}</nav>
 <div class="actions">{actions}</div>
 </div></header>
@@ -156,10 +177,11 @@ def layout(s, path, title, desc, body, lang="sv", alt=None, jsonld=""):
 def footer_sv(s, path):
     h = lambda t: s.href(path, t)
     return f"""<footer class="site-footer"><div class="wrap">
-<div class="col"><b>Lillakliniken Psykiatri Cura</b>
+<div class="col"><div class="footer-logo">{LOGO_STACK}</div>
 <span>Specialistpsykiatri för vuxna – online i hela Sverige och på mottagning i Göteborg.</span>
 <span>Vårdgivare: {ORG}</span>
-<span>Vid akuta besvär: ring 1177 eller 112.</span></div>
+<span>Vid akuta besvär: ring 1177 eller 112.</span>
+{social_links()}</div>
 <nav class="col" aria-label="Tjänster">
 <a href="{h('/psykiater-online/')}">Psykiater online</a>
 <a href="{h('/psykiater-goteborg/')}">Psykiater Göteborg</a>
@@ -186,10 +208,11 @@ def footer_sv(s, path):
 def footer_dk(s, path):
     h = lambda t: s.href(path, t)
     return f"""<footer class="site-footer"><div class="wrap">
-<div class="col"><b>Lillakliniken Psykiatri Cura</b>
+<div class="col"><div class="footer-logo">{LOGO_STACK}</div>
 <span>Speciallæge i psykiatri – videokonsultationer i hele Danmark.</span>
 <span>{ORG}</span>
-<span>Ved akut behov: kontakt egen læge, lægevagten eller ring 112.</span></div>
+<span>Ved akut behov: kontakt egen læge, lægevagten eller ring 112.</span>
+{social_links()}</div>
 <nav class="col" aria-label="Information">
 <a href="{h('/dk/kontakt/')}">Kontakt</a>
 <a href="{h('/dk/kontakt/')}#klage">Klagevejledning</a>

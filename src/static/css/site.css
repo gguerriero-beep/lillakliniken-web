@@ -1,49 +1,54 @@
 /* Lillakliniken – site.css
    Layout: one centred column (max 1120px), full-width bands for hero, sections and footer.
-   Calm clinical look: cool green-grey ground, deep ink, one deep teal accent. */
+   Brand look (LPC brandkit): warm greige ground, near-black ink and buttons, soft sage accent,
+   Quicksand for headings, Mulish for text, letter-spaced uppercase labels and buttons. */
 
-@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/hanken-grotesk-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/hanken-grotesk-latin-500-normal.woff2") format("woff2"); }
-@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/hanken-grotesk-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Schibsted Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/schibsted-grotesk-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Schibsted Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/schibsted-grotesk-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/quicksand-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/quicksand-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/quicksand-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Mulish"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/mulish-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Mulish"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/mulish-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Mulish"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/mulish-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Mulish"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/mulish-latin-700-normal.woff2") format("woff2"); }
 
 :root {
-  --bg: #F4F6F4;
+  --bg: #F3F1EC;
   --surface: #FFFFFF;
-  --soft: #EAF1EE;
-  --ink: #16232B;
-  --muted: #3D4D53;
-  --faint: #56666C;
-  --line: #D9E1DE;
-  --accent: #1F5C5A;
-  --accent-hover: #164644;
+  --soft: #E9E5DD;
+  --ink: #1C1C1A;
+  --muted: #4A4743;
+  --faint: #66625C;
+  --line: #DDD8CF;
+  --accent: #4F6549;
+  --accent-hover: #3B4D37;
+  --btn: #1C1C1A;
+  --btn-hover: #3A3936;
   --on-accent: #FFFFFF;
-  --band: #16232B;
-  --on-band: #E6EEEC;
-  --on-band-muted: #B9C7C3;
-  --note-bg: #FBF3E8;
-  --note-line: #E6D2B5;
+  --band: #1C1C1A;
+  --on-band: #EFECE6;
+  --on-band-muted: #C3BEB5;
+  --note-bg: #F6EFE3;
+  --note-line: #E3D4BC;
   --note-ink: #3A3226;
   --focus: #2B6CB0;
-  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --radius: 12px;
+  --font-display: "Quicksand", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --radius: 6px;
   --wrap: 1120px;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0F1719; --surface: #162125; --soft: #1B2A2D; --ink: #E6EEEC; --muted: #B4C3C0; --faint: #9AABA8;
-    --line: #2A3A3E; --accent: #7CC7BB; --accent-hover: #9AD6CC; --on-accent: #0F1719;
-    --band: #0B1214; --on-band: #E6EEEC; --on-band-muted: #A9B8B5;
+    --bg: #171614; --surface: #201F1C; --soft: #2A2925; --ink: #EFECE6; --muted: #C9C4BB; --faint: #A9A399;
+    --line: #36342F; --accent: #A9C29F; --accent-hover: #C2D6BA; --btn: #EFECE6; --btn-hover: #FFFFFF; --on-accent: #171614;
+    --band: #0F0E0D; --on-band: #EFECE6; --on-band-muted: #B5AFA5;
     --note-bg: #2A2419; --note-line: #4F4330; --note-ink: #EADFC8; --focus: #8AB4F8; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0F1719; --surface: #162125; --soft: #1B2A2D; --ink: #E6EEEC; --muted: #B4C3C0; --faint: #9AABA8;
-  --line: #2A3A3E; --accent: #7CC7BB; --accent-hover: #9AD6CC; --on-accent: #0F1719;
-  --band: #0B1214; --on-band: #E6EEEC; --on-band-muted: #A9B8B5;
+  --bg: #171614; --surface: #201F1C; --soft: #2A2925; --ink: #EFECE6; --muted: #C9C4BB; --faint: #A9A399;
+  --line: #36342F; --accent: #A9C29F; --accent-hover: #C2D6BA; --btn: #EFECE6; --btn-hover: #FFFFFF; --on-accent: #171614;
+  --band: #0F0E0D; --on-band: #EFECE6; --on-band-muted: #B5AFA5;
   --note-bg: #2A2419; --note-line: #4F4330; --note-ink: #EADFC8; --focus: #8AB4F8; color-scheme: dark;
 }
 
@@ -55,8 +60,8 @@ img { max-width: 100%; height: auto; }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:hover { color: var(--accent-hover); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
-h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); letter-spacing: -0.02em; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.18; letter-spacing: -0.005em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.1rem, 4.6vw, 3.3rem); letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 h3 { font-size: 1.25rem; }
 p { margin: 0; }
@@ -71,7 +76,7 @@ p { margin: 0; }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 620px; }
 .muted { color: var(--muted); }
 .small { font-size: 0.93rem; color: var(--faint); }
-.eyebrow { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
 
 /* Top bar + header */
 .topbar { background: var(--band); color: var(--on-band); font-size: 0.88rem; }
@@ -81,39 +86,41 @@ p { margin: 0; }
 .lang { display: flex; gap: 14px; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; padding-block: 16px; }
-.brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; color: var(--ink); }
-.brand b { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; letter-spacing: -0.01em; }
-.brand span { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.brand { display: flex; align-items: center; text-decoration: none; color: var(--ink); }
+.brand svg { display: block; height: 46px; width: auto; }
 .brand:hover { color: var(--ink); }
+@media (max-width: 520px) { .brand svg { height: 38px; } }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-weight: 500; }
 .nav a { color: var(--ink); text-decoration: none; padding-block: 6px; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1.5px solid transparent; font-size: 1rem; }
-.btn-primary { background: var(--accent); color: var(--on-accent); }
-.btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border-radius: 3px; font-weight: 700; text-decoration: none; border: 1.5px solid transparent; font-size: 0.86rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.btn-primary { background: var(--btn); color: var(--on-accent); }
+.btn-primary:hover { background: var(--btn-hover); color: var(--on-accent); }
 .btn-ghost { border-color: var(--ink); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-ghost:hover { background: var(--ink); color: var(--surface); }
 .btn-light { background: var(--on-band); color: var(--band); }
 .btn-light:hover { background: var(--surface); color: var(--ink); }
-.btn-lg { min-height: 52px; padding: 0 26px; font-size: 1.06rem; }
+.btn-lg { min-height: 54px; padding: 0 30px; font-size: 0.92rem; }
 
 /* Sections */
 section { padding-block: 64px; }
 .band-white { background: var(--surface); border-block: 1px solid var(--line); }
 .section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; max-width: 680px; }
-.hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 64px 72px; }
+.hero { background: var(--soft); border-bottom: 1px solid var(--line); padding-block: 72px 80px; position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; right: -60px; bottom: -40px; width: 340px; height: 260px; background: url("../img/lotus.svg") no-repeat center / contain; opacity: 0.07; pointer-events: none; }
+.hero .wrap { position: relative; z-index: 1; }
 .hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
 .hero-main { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .hero-side { flex: 1 1 300px; min-width: 0; }
-.page-hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 52px 48px; }
+.page-hero { background: var(--soft); border-bottom: 1px solid var(--line); padding-block: 52px 48px; }
 .page-hero .wrap { display: flex; flex-direction: column; gap: 16px; }
 .crumbs { font-size: 0.9rem; color: var(--faint); }
 .crumbs a { color: var(--faint); }
 
-.price-card { background: var(--soft); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.price-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
 .price-card h2 { font-size: 1.2rem; }
 .price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
 .price-row strong { font-size: 1.3rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -168,12 +175,18 @@ caption { text-align: left; padding: 18px 20px 4px; font-family: var(--font-disp
 .faq summary { cursor: pointer; font-weight: 600; }
 .faq details p { margin-top: 10px; color: var(--muted); }
 
-.cta-band { background: var(--soft); }
+.cta-band { background: var(--soft); border-top: 1px solid var(--line); }
 .cta-band .wrap { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; }
 
 .site-footer { background: var(--band); color: var(--on-band-muted); font-size: 0.95rem; padding-block: 48px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 32px 60px; justify-content: space-between; }
 .site-footer .col { display: flex; flex-direction: column; gap: 8px; flex: 1 1 220px; min-width: 0; }
 .site-footer b { color: var(--on-band); font-family: var(--font-display); font-size: 1.1rem; }
+.site-footer .footer-logo { color: var(--on-band); width: 150px; margin-bottom: 6px; }
+.site-footer .footer-logo svg { display: block; width: 100%; height: auto; }
+.social { display: flex; gap: 14px; margin-top: 6px; }
+.social a { display: inline-flex; width: 38px; height: 38px; align-items: center; justify-content: center; border: 1px solid #4A4743; border-radius: 50%; }
+.social a:hover { background: var(--on-band); color: var(--band); }
+.social svg { width: 18px; height: 18px; fill: currentColor; }
 .site-footer a { color: var(--on-band); }
-.site-footer .legal { flex-basis: 100%; border-top: 1px solid #2E3D42; padding-top: 18px; font-size: 0.88rem; }
+.site-footer .legal { flex-basis: 100%; border-top: 1px solid #3A3936; padding-top: 18px; font-size: 0.88rem; }
