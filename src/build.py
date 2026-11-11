@@ -280,7 +280,9 @@ def home(s):
 <div class="actions"><a class="btn btn-primary btn-lg" href="{h('/boka/')}">Boka läkarbedömning</a>
 <a class="btn btn-ghost btn-lg" href="{h('/sa-fungerar-det/')}">Så fungerar det</a></div>
 </div>
-<aside class="hero-side"><div class="price-card">
+<aside class="hero-side"><div class="hero-visual">
+<img class="hero-photo" src="{s.asset(p, 'img/mottagning-kopp.jpg')}" alt="Kaffekopp med Lillaklinikens logotyp på ett bord, med en kvist i vas i bakgrunden" width="768" height="861">
+<div class="price-card">
 <h2>Nybesök hos psykiater</h2>
 <div class="price-row"><span>60 minuter</span><strong>2 500 kr</strong></div>
 <div class="price-row"><span>90 minuter</span><strong>3 500 kr</strong></div>
@@ -289,7 +291,7 @@ def home(s):
 <li>{CHECK}Bokning och inloggning med BankID</li>
 <li>{CHECK}Betalas vid bokning</li>
 </ul>
-</div></aside>
+</div></div></aside>
 </div></div>
 
 <section aria-labelledby="hjalp"><div class="wrap">
@@ -328,10 +330,10 @@ def home(s):
 </div></section>
 
 <section style="padding-top:0" aria-labelledby="mottagning"><div class="wrap">
-<div class="section-head"><h2 id="mottagning">Vår mottagning i Göteborg</h2><p class="muted">En liten, lugn mottagning på {ADDRESS}. Här träffar du läkaren när ett besök på plats behövs – övriga besök sker via video.</p></div>
+<div class="section-head section-head-leaf"><h2 id="mottagning">Vår mottagning i Göteborg</h2><p class="muted">En liten, lugn mottagning på {ADDRESS}. Här träffar du läkaren när ett besök på plats behövs – övriga besök sker via video.</p></div>
 <div class="gallery">
 <img src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
-<img src="{s.asset(p, 'img/mottagning-kopp.jpg')}" alt="Kaffekopp med Lillaklinikens logotyp på ett bord, med en kvist i vas i bakgrunden" width="768" height="861" loading="lazy">
+<img src="{s.asset(p, 'img/mottagning-fatoljer.jpg')}" alt="Två fåtöljer med kuddar, ett litet bord och gröna växter i fönstret" width="1000" height="1067" loading="lazy">
 <img src="{s.asset(p, 'img/mottagning-vantrum.jpg')}" alt="Väntrummet med två stolar, en växt och tavlor på väggen" width="1100" height="1222" loading="lazy">
 </div>
 <p style="margin-top:18px"><a href="{h('/psykiater-goteborg/')}">Mer om mottagningen i Göteborg →</a></p>

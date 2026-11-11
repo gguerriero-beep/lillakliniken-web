@@ -9,13 +9,13 @@
 @font-face { font-family: "Schibsted Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/schibsted-grotesk-latin-700-normal.woff2") format("woff2"); }
 
 :root {
-  --bg: #F4F6F4;
+  --bg: #F7F4EF;
   --surface: #FFFFFF;
-  --soft: #EAF1EE;
+  --soft: #EFEAE3;
   --ink: #16232B;
   --muted: #3D4D53;
   --faint: #56666C;
-  --line: #D9E1DE;
+  --line: #E4DED4;
   --accent: #1F5C5A;
   --accent-hover: #164644;
   --on-accent: #FFFFFF;
@@ -28,7 +28,7 @@
   --focus: #2B6CB0;
   --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --radius: 12px;
+  --radius: 16px;
   --wrap: 1120px;
   color-scheme: light;
 }
@@ -105,14 +105,8 @@ section { padding-block: 64px; }
 .band-white { background: var(--surface); border-block: 1px solid var(--line); }
 .section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; max-width: 680px; }
 .hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 64px 72px; position: relative; overflow: hidden; }
-.hero::before { content: ""; position: absolute; right: max(-60px, calc((100vw - var(--wrap)) / 2 - 100px)); top: 6px; width: 290px; height: 430px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.38; pointer-events: none; transform: rotate(12deg); }
 .hero .wrap { position: relative; z-index: 1; }
-.hero + section { position: relative; overflow: hidden; }
-.hero + section::after { content: ""; position: absolute; right: max(0px, calc((100vw - var(--wrap)) / 2 + 10px)); top: -120px; width: 200px; height: 300px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.5; transform: rotate(-62deg); transform-origin: center; pointer-events: none; }
-.hero + section > .wrap { position: relative; z-index: 1; }
-@media (max-width: 760px) { .hero + section::after { display: none; } }
-@media (max-width: 760px) { .hero::before { width: 190px; height: 280px; right: -70px; top: -20px; opacity: 0.14; } }
-.hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
+@media (max-width: 760px) { .hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
 .hero-main { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .hero-side { flex: 1 1 300px; min-width: 0; }
 .page-hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 52px 48px; }
@@ -198,3 +192,15 @@ caption { text-align: left; padding: 18px 20px 4px; font-family: var(--font-disp
 .gallery img { width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius); display: block; background: var(--soft); }
 @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; } .gallery img:first-child { grid-column: 1 / -1; } .gallery img { height: 240px; } }
 .photo-wide { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+
+/* Warm hero: photo from the clinic with the price card resting on it */
+.hero-visual { position: relative; }
+.hero-photo { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; border-radius: 22px; }
+.hero-visual .price-card { position: relative; margin: -110px 18px 0; box-shadow: 0 14px 34px rgba(40, 32, 20, 0.12); background: var(--surface); }
+.hero-side { flex: 1 1 340px; max-width: 420px; }
+.hero::before { content: ""; position: absolute; left: -40px; top: -30px; width: 210px; height: 300px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.16; transform: rotate(-150deg); pointer-events: none; }
+@media (max-width: 760px) { .hero::before { width: 140px; height: 200px; left: auto; right: -40px; opacity: 0.12; } .hero-photo { aspect-ratio: 4 / 3; } }
+.section-head-leaf { position: relative; max-width: none; padding-right: 220px; }
+.section-head-leaf::after { content: ""; position: absolute; right: 10px; top: -36px; width: 190px; height: 150px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.55; transform: rotate(-58deg); pointer-events: none; }
+@media (max-width: 700px) { .section-head-leaf { padding-right: 0; } .section-head-leaf::after { width: 110px; height: 90px; top: -50px; right: -10px; opacity: 0.4; } }
+.section-head-leaf p { max-width: 640px; }
