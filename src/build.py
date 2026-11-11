@@ -333,7 +333,7 @@ def home(s):
 <div class="section-head section-head-leaf"><h2 id="mottagning">Vår mottagning i Göteborg</h2><p class="muted">En liten, lugn mottagning på {ADDRESS}. Här träffar du läkaren när ett besök på plats behövs – övriga besök sker via video.</p></div>
 <div class="gallery">
 <img src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
-<img src="{s.asset(p, 'img/mottagning-fatoljer.jpg')}" alt="Två fåtöljer med kuddar, ett litet bord och gröna växter i fönstret" width="1000" height="1067" loading="lazy">
+<img src="{s.asset(p, 'img/mottagning-ljusrum.jpg')}" alt="Mottagningsrum med ljustak som visar himmel, ett skrivbord med en grön växt och två fåtöljer" width="360" height="480" loading="lazy">
 <img src="{s.asset(p, 'img/mottagning-vantrum.jpg')}" alt="Väntrummet med två stolar, en växt och tavlor på väggen" width="1100" height="1222" loading="lazy">
 </div>
 <p style="margin-top:18px"><a href="{h('/psykiater-goteborg/')}">Mer om mottagningen i Göteborg →</a></p>
