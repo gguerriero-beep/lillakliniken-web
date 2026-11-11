@@ -195,8 +195,8 @@ caption { text-align: left; padding: 18px 20px 4px; font-family: var(--font-disp
 
 /* Warm hero: photo from the clinic with the price card resting on it */
 .hero-visual { position: relative; }
-.hero-photo { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; border-radius: 22px; }
-.hero-visual .price-card { position: relative; margin: -110px 18px 0; box-shadow: 0 14px 34px rgba(40, 32, 20, 0.12); background: var(--surface); }
+.hero-photo { display: block; width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center 62%; border-radius: 22px; }
+.hero-visual .price-card { position: relative; margin: -70px 18px 0; box-shadow: 0 14px 34px rgba(40, 32, 20, 0.12); background: var(--surface); }
 .hero-side { flex: 1 1 340px; max-width: 420px; }
 .hero::before { content: ""; position: absolute; left: -40px; top: -30px; width: 210px; height: 300px; background: url("../img/eucalyptus.svg") no-repeat center / contain; opacity: 0.16; transform: rotate(-150deg); pointer-events: none; }
 @media (max-width: 760px) { .hero::before { width: 140px; height: 200px; left: auto; right: -40px; opacity: 0.12; } .hero-photo { aspect-ratio: 4 / 3; } }
