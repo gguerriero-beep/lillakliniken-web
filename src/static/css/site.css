@@ -85,9 +85,9 @@ p { margin: 0; }
 .topbar a[aria-current="true"] { color: var(--on-band); }
 .lang { display: flex; gap: 14px; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
-.site-header .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; padding-block: 16px; }
+.site-header .wrap { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between; padding-block: 16px; }
 .brand { display: flex; align-items: center; text-decoration: none; color: var(--ink); }
-.brand svg { display: block; height: 46px; width: auto; }
+.brand svg { display: block; height: 40px; width: auto; }
 .brand:hover { color: var(--ink); }
 @media (max-width: 520px) { .brand svg { height: 38px; } }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-weight: 500; }
