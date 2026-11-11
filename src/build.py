@@ -333,7 +333,7 @@ def home(s):
 <div class="section-head section-head-leaf"><h2 id="mottagning">Vår mottagning i Göteborg</h2><p class="muted">En liten, lugn mottagning på {ADDRESS}. Här träffar du läkaren när ett besök på plats behövs – övriga besök sker via video.</p></div>
 <div class="gallery">
 <img src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
-<img src="{s.asset(p, 'img/mottagning-ljusrum.jpg')}" alt="Mottagningsrum med ljustak som visar himmel, ett skrivbord med en grön växt och två fåtöljer" width="360" height="480" loading="lazy">
+<img src="{s.asset(p, 'img/mottagning-ljusrum.jpg')}" alt="Mottagningsrum med ljustak som visar himmel, ett skrivbord med en grön växt och två fåtöljer" width="900" height="1152" loading="lazy">
 <img src="{s.asset(p, 'img/mottagning-vantrum.jpg')}" alt="Väntrummet med två stolar, en växt och tavlor på väggen" width="1100" height="1222" loading="lazy">
 </div>
 <p style="margin-top:18px"><a href="{h('/psykiater-goteborg/')}">Mer om mottagningen i Göteborg →</a></p>
@@ -468,6 +468,7 @@ def goteborg(s):
 <img class="photo-wide" src="{s.asset(p, 'img/mottagning-rum.jpg')}" alt="Mottagningsrummet på Vändgatan 9 med två fåtöljer, ett litet bord med en grön växt och läkarens skrivbord" width="1139" height="691" loading="lazy">
 <h2>Mottagningen</h2>
 <p>Vår mottagning ligger på {ADDRESS}. Du kan boka ditt nybesök direkt på mottagningen, och återbesök kan ske på plats eller via video – efter vad som passar dig och behandlingen.</p>
+<img class="photo-wide" src="{s.asset(p, 'img/mottagning-vallmo.jpg')}" alt="Ljustak med himmel och en tavla med två vallmor i vaser" width="1000" height="1000" loading="lazy" style="max-width:520px">
 <h2>Så börjar du</h2>
 <p>Alla nya patienter börjar med ett nybesök hos en specialistläkare i psykiatri – på mottagningen i Göteborg (90 minuter) eller via video (60 eller 90 minuter). Du väljer när du <a href="{h('/boka/')}">bokar</a>.</p>
 <h2>Vi hjälper vuxna med</h2>
