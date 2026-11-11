@@ -270,7 +270,7 @@ NOT_FOR_US = """<div class="note">
 def home(s):
     p = "/"
     h = lambda t: s.href(p, t)
-    jsonld = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalClinic","name":"Lillakliniken Psykiatri Cura","url":"{SITE_URL}/","telephone":"{PHONE_TEL}","email":"{EMAIL}","medicalSpecialty":"Psychiatric","address":{{"@type":"PostalAddress","streetAddress":"Vändgatan 9","postalCode":"416 44","addressLocality":"Göteborg","addressCountry":"SE"}},"areaServed":["SE","DK"]}}</script>"""
+    jsonld = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalClinic","name":"Lillakliniken Psykiatri Cura","url":"{SITE_URL}/","email":"{EMAIL}","medicalSpecialty":"Psychiatric","address":{{"@type":"PostalAddress","streetAddress":"Vändgatan 9","postalCode":"416 44","addressLocality":"Göteborg","addressCountry":"SE"}},"areaServed":["SE","DK"]}}</script>"""
     body = f"""
 <div class="hero"><div class="wrap">
 <div class="hero-main">
@@ -677,12 +677,12 @@ def doctors(s):
 def contact(s):
     p = "/kontakt/"
     body = page_hero(s, p, "Kontakt", "Kontakt",
-                     "Skriv helst till oss via vårt kontaktformulär med BankID. Då hamnar ditt meddelande säkert i rätt journal.",
+                     "Vi har ingen telefonmottagning. Skriv till oss via vårt kontaktformulär med BankID – då hamnar ditt meddelande säkert i rätt journal.",
                      crumbs="Kontakt", cta=False) + f"""
 <section><div class="wrap">
 <div class="grid grid-3">
 <div class="card"><h3>Skriv till oss</h3><p class="grow">Logga in med BankID och skicka ett meddelande. Vi svarar inom två arbetsdagar.</p><a class="btn btn-primary" href="{LOGIN}">Öppna kontaktformuläret</a></div>
-<div class="card"><h3>Telefon</h3><p class="grow">Vi har begränsad telefontid. Om vi inte kan svara, skriv hellre till oss via kontaktformuläret.</p><p><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></p></div>
+<div class="card"><h3>Ny patient?</h3><p class="grow">Du behöver inte ringa eller skriva först. Boka en läkarbedömning direkt med BankID – det går snabbast.</p><a class="btn btn-ghost" href="{s.href(p, '/boka/')}">Boka läkarbedömning</a></div>
 <div class="card"><h3>Mottagning</h3><p class="grow">{ADDRESS}. Besök på mottagningen sker efter överenskommelse med din läkare.</p><p class="small">E-post för allmänna frågor (inte för personuppgifter eller hälsofrågor): {EMAIL}</p></div>
 </div>
 </div></section>
