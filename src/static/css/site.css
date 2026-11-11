@@ -106,7 +106,7 @@ section { padding-block: 64px; }
 .section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; max-width: 680px; }
 .hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 64px 72px; position: relative; overflow: hidden; }
 .hero .wrap { position: relative; z-index: 1; }
-@media (max-width: 760px) { .hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
+.hero .wrap { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
 .hero-main { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .hero-side { flex: 1 1 300px; min-width: 0; }
 .page-hero { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 52px 48px; }
