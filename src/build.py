@@ -152,7 +152,7 @@ def layout(s, path, title, desc, body, lang="sv", alt=None, jsonld=""):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}">
-<meta name="theme-color" content="#1C1C1A">
+<meta name="theme-color" content="#16232B">
 <link rel="icon" href="{ico}" type="image/svg+xml">
 <link rel="stylesheet" href="{css}">
 {jsonld}
