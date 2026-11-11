@@ -48,10 +48,12 @@ BOOK_ADHD = K + "/booking/cal/psykiater-nybesok-90-min-online"   # byt till ADHD
 BOOK_RX = K + "/booking/cal/psykiater-forskrivningsfornyelse"
 BOOK_ONSITE_90 = K + "/booking/cal/psykiater-nybesok-90-min-mottagning-goteborg"
 LOGIN = K + "/login"
+CONTACT_FORM = K + "/contact-us"
 KDK = "https://lillaklinikendk.kaddio.com"   # dansk enhed (DKK)
 DK_FIRST_60 = KDK + "/booking/cal/psykiater-frste-konsultation-60-min-online"
 DK_FIRST_90 = KDK + "/booking/cal/psykiater-frste-konsultation-90-min-online"
 DK_LOGIN = KDK + "/login"
+DK_CONTACT_FORM = KDK + "/contact-us"
 
 PHONE_DISPLAY = "070-448 02 40"
 PHONE_TEL = "+46704480240"
@@ -681,7 +683,7 @@ def contact(s):
                      crumbs="Kontakt", cta=False) + f"""
 <section><div class="wrap">
 <div class="grid grid-3">
-<div class="card"><h3>Skriv till oss</h3><p class="grow">Logga in med BankID och skicka ett meddelande. Vi svarar inom två arbetsdagar.</p><a class="btn btn-primary" href="{LOGIN}">Öppna kontaktformuläret</a></div>
+<div class="card"><h3>Skriv till oss</h3><p class="grow">Frågor om vård, recept, intyg eller bokning – ny patient eller redan patient. Meddelandet hamnar säkert hos oss i journalsystemet. Vi svarar inom två arbetsdagar.</p><a class="btn btn-primary" href="{CONTACT_FORM}">Öppna kontaktformuläret</a><a class="small" href="{LOGIN}">Redan patient? Logga in med BankID →</a></div>
 <div class="card"><h3>Ny patient?</h3><p class="grow">Du behöver inte ringa eller skriva först. Boka en läkarbedömning direkt med BankID – det går snabbast.</p><a class="btn btn-ghost" href="{s.href(p, '/boka/')}">Boka läkarbedömning</a></div>
 <div class="card"><h3>Mottagning</h3><p class="grow">{ADDRESS}. Besök på mottagningen sker efter överenskommelse med din läkare.</p><p class="small">E-post för allmänna frågor (inte för personuppgifter eller hälsofrågor): {EMAIL}</p></div>
 </div>
@@ -822,8 +824,8 @@ def dk_home(s):
 def dk_contact(s):
     p = "/dk/kontakt/"
     body = f"""<div class="page-hero"><div class="wrap"><span class="eyebrow">Kontakt</span><h1>Kontakt</h1>
-<p class="lead">Skriv helst til os via kontaktformularen, når du er logget ind. Så havner din besked sikkert i din journal.</p>
-<div class="actions"><a class="btn btn-primary" href="{DK_LOGIN}">Log ind og skriv til os</a></div></div></div>
+<p class="lead">Vi har ingen telefon. Skriv til os via kontaktformularen – så havner din besked sikkert hos os i journalsystemet.</p>
+<div class="actions"><a class="btn btn-primary" href="{DK_CONTACT_FORM}">Åbn kontaktformularen</a><a class="btn btn-ghost" href="{DK_LOGIN}">Allerede patient? Log ind med MitID</a></div></div></div>
 <section><div class="wrap prose">
 <p>Generelle spørgsmål (ikke helbredsoplysninger): {EMAIL_DK}</p>
 <p>Alle konsultationer i Danmark foregår som videokonsultation. Vi har ingen klinik i Danmark, hvor du kan møde op.</p>
